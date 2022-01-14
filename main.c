@@ -47,6 +47,13 @@ int main(int argc, char *argv[])
     while (getline(&str, &len, file) != -1)
     {
         name = strtok(str, " \t\n");
+
+		if (!name || *name == ' ')
+		{
+			a++;
+			continue;
+		}
+
 		value = strtok(NULL, " \t\n");
 		start(&stack, name, value, a + 1);
 		if (status == EXIT_FAILURE)
