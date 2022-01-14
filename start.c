@@ -44,7 +44,7 @@ void start(stack_t **stack, char *name, char *value, int inf)
 }
 
 /**
- * _isnumber - checks if a string is a number
+ * _checknum - checks if a string is a number
  * @str: provided string
  *
  * Return: 1 if the string is a number, else, 0.
