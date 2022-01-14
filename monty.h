@@ -44,8 +44,17 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+/* Functions */
+void push(stack_t **stack, unsigned int line_number);
+
+/* Main menu */
 static const instruction_t instructions[] = {
 	{"push", push},
     {NULL, NULL}};
+
+/* Auxiliar functions */
+void start(stack_t **stack, char *name, char *value, int inf);
+int _checknum(char *str);
+void free_dlist(stack_t *head);
 
 #endif

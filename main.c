@@ -44,3 +44,22 @@ int main(int argc, char *argv[])
 
     file = f_open(argv[1]);
 
+    while (getline(&str, &len, file) != -1)
+    {
+        name = strtok(str, " \t\n");
+		value = strtok(NULL, " \t\n");
+		start(&stack, name, value, a + 1);
+		if (status == EXIT_FAILURE)
+		{
+			free(str);
+			free_dlist(stack);
+			fclose(file);
+			exit(status);
+		}
+		a++;
+    }
+	free(str);
+	fclose(file);
+	free_dlist(stack);
+	return (0);
+}
