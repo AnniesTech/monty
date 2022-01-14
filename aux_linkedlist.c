@@ -15,3 +15,25 @@ void free_dlist(stack_t *head)
 		free(tmp);
 	}
 }
+
+/**
+ * print_dlistint - Function that prints a double linked list
+ * @h: Main node
+ * Return: size of h
+ */
+
+size_t print_dlistint(const stack_t *h)
+{
+	size_t i = 0;
+
+	if (h != NULL)
+	{
+		while (h != NULL)
+		{
+			printf("%d\n", h->n);
+			i++;
+			h = h->next;
+		}
+	}
+	return (i);
+}
