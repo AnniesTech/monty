@@ -36,7 +36,7 @@ int main(int argc, char *argv[])
 	stack_t *stack = NULL;
 	size_t len = 0;
 
-	if (argc < 2)
+	if (argc != 2)
 	{
 		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
